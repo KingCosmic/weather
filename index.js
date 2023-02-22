@@ -4,28 +4,18 @@ const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 
-search.addEventListener('click', () => {
-    const city = document.querySelector('.search-box input').value;
+// search.addEventListener('click', () => {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(getWeather);
+//     } else {
+//         alert("Geolocation is not supported by this browser.");
+//         return
+//     }
+// });
 
-    if (city === '')
-        return;
-
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getWeather);
-    } else {
-        alert("Geolocation is not supported by this browser.");
-        return
-    }
-});
-
-// startGettingWeather();
+startGettingWeather();
 
 function startGettingWeather() {
-    const city = document.querySelector('.search-box input').value;
-
-    if (city === '')
-        return;
-
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getWeather);
     } else {
